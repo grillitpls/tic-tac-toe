@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position:relative;
+    width: 100%;
+    background-color: rgb(104, 90, 90);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* form */
+#player-form {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    /* z-index: 2; */
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-form div {
+    margin-bottom: 5px; 
+    display: flex;
+    flex-direction: column;
+}
+
+#player-form label {
+    margin-right: 10px;
+}
+
+#player-form input {
+    border-radius: 3px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#player-form button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+}
+
+/* control section */
+.control-section {
+    background-color: rgb(206, 224, 170);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.control-btns {
+    display: flex;
+}
+
+.new-game {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
+
+.restart {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: grey;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
+
+.display {
+    display: flex;
+    margin: 10px;
+}
+
+.display-x {
+    margin: 0px 30px;   
+}
+
+.display-o {
+    margin: 0px 30px;
+}
+/* game section */
+.game-container {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-square {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    height: 33.3%;
+    width: 33.3%;
+    background-color: darkslategray;
+    border: 1px solid rgb(214, 180, 180);
+    font-size: 70px;
+    color: black;
+}
+
+/* gameover pop */
+.gameover-pop {
+    position:absolute;
+    justify-self: center;
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    color:red;
+    border-radius: 5px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.again {
+    margin-top: 15px;
+    background-color: darkslategray;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
