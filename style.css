@@ -54,6 +54,7 @@
 }
 
 /* control section */
+
 .control-section {
     background-color: rgb(206, 224, 170);
     width: 100%;
@@ -62,6 +63,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.hello {
+    margin-bottom: 10px;
 }
 
 .control-btns {

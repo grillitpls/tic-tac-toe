@@ -46,34 +46,36 @@ const gameFlow =(function () {
                 || (two.innerHTML === x && five.innerHTML === x && eight.innerHTML === x)) {
                     console.log('playerX win')
 
-                    let d = document.createElement('div')
-                    d.classList.add('gameover-pop')
-
-                    let p = document.createElement('p')
-                    if(document.querySelector('.display-x').textContent === ''){
-                        p.textContent = 'PlayerX wins!'
-                    }else {
-                        p.textContent = `${document.querySelector('.display-x').textContent} wins!`
+                    if(document.querySelector('.gameover-pop') === null) {
+                        let d = document.createElement('div')
+                        d.classList.add('gameover-pop')
+    
+                        let p = document.createElement('p')
+                        if(document.querySelector('.display-x').textContent === ''){
+                            p.textContent = 'PlayerX wins!'
+                        }else {
+                            p.textContent = `${document.querySelector('.display-x').textContent} wins!`
+                        }
+                        
+                        let childD = document.createElement('div')
+                        let newGameBtn = document.createElement('button')
+                        newGameBtn.classList.add('new-game')
+                        newGameBtn.setAttribute('onclick', 'btn.newGame()')
+                        newGameBtn.textContent = 'New Game'
+    
+                        let againBtn = document.createElement('button')
+                        againBtn.classList.add('again')
+                        againBtn.setAttribute('onclick', 'btn.again(this, event)')
+                        againBtn.textContent = 'Again'
+    
+                        childD.appendChild(newGameBtn)
+                        childD.appendChild(againBtn)
+    
+                        d.appendChild(p)
+                        d.appendChild(childD)
+    
+                        container.appendChild(d)
                     }
-                    
-                    let childD = document.createElement('div')
-                    let newGameBtn = document.createElement('button')
-                    newGameBtn.classList.add('new-game')
-                    newGameBtn.setAttribute('onclick', 'btn.newGame()')
-                    newGameBtn.textContent = 'New Game'
-
-                    let againBtn = document.createElement('button')
-                    againBtn.classList.add('again')
-                    againBtn.setAttribute('onclick', 'btn.again(this, event)')
-                    againBtn.textContent = 'Again'
-
-                    childD.appendChild(newGameBtn)
-                    childD.appendChild(againBtn)
-
-                    d.appendChild(p)
-                    d.appendChild(childD)
-
-                    container.appendChild(d)
             }else if ((one.innerHTML === o && two.innerHTML === o && three.innerHTML === o)
                 || (four.innerHTML === o && five.innerHTML === o && six.innerHTML === o)
                 || (three.innerHTML === o && six.innerHTML === o && nine.innerHTML === o)
@@ -84,34 +86,38 @@ const gameFlow =(function () {
                 || (two.innerHTML === o && five.innerHTML === o && eight.innerHTML === o)) {
                     console.log('playerO win')
 
-                    let d = document.createElement('div')
-                    d.classList.add('gameover-pop')
-
-                    let p = document.createElement('p')
-                    if(document.querySelector('.display-o').textContent === ''){
-                        p.textContent = 'PlayerO wins!'
-                    }else {
-                        p.textContent = `${document.querySelector('.display-o').textContent} wins!`
+                    if(document.querySelector('.gameover-pop') === null) {
+                        
+                        let d = document.createElement('div')
+                        d.classList.add('gameover-pop')
+    
+                        let p = document.createElement('p')
+                        if(document.querySelector('.display-o').textContent === ''){
+                            p.textContent = 'PlayerO wins!'
+                        }else {
+                            p.textContent = `${document.querySelector('.display-o').textContent} wins!`
+                        }
+                        
+                        
+                        let childD = document.createElement('div')
+                        let newGameBtn = document.createElement('button')
+                        newGameBtn.classList.add('new-game')
+                        newGameBtn.setAttribute('onclick', 'btn.newGame()')
+                        newGameBtn.textContent = 'New Game'
+    
+                        let againBtn = document.createElement('button')
+                        againBtn.classList.add('again')
+                        againBtn.setAttribute('onclick', 'btn.again(this, event)')
+                        againBtn.textContent = 'Again'
+    
+                        childD.appendChild(newGameBtn)
+                        childD.appendChild(againBtn)
+    
+                        d.appendChild(p)
+                        d.appendChild(childD)
+    
+                        container.appendChild(d)
                     }
-                    
-                    let childD = document.createElement('div')
-                    let newGameBtn = document.createElement('button')
-                    newGameBtn.classList.add('new-game')
-                    newGameBtn.setAttribute('onclick', 'btn.newGame()')
-                    newGameBtn.textContent = 'New Game'
-
-                    let againBtn = document.createElement('button')
-                    againBtn.classList.add('again')
-                    againBtn.setAttribute('onclick', 'btn.again(this, event)')
-                    againBtn.textContent = 'Again'
-
-                    childD.appendChild(newGameBtn)
-                    childD.appendChild(againBtn)
-
-                    d.appendChild(p)
-                    d.appendChild(childD)
-
-                    container.appendChild(d)
             }else if ((one.innerHTML === x || one.innerHTML === o) 
                 && (two.innerHTML === x || two.innerHTML === o)
                 && (three.innerHTML === x || three.innerHTML === o)
@@ -122,31 +128,33 @@ const gameFlow =(function () {
                 && (eight.innerHTML === x || eight.innerHTML === o)
                 && (nine.innerHTML === x || nine.innerHTML === o)) {
                     console.log('tie')
-
-                    let d = document.createElement('div')
-                    d.classList.add('gameover-pop')
-
-                    let p = document.createElement('p')
-                    p.textContent = 'TIE!'
-                    
-                    let childD = document.createElement('div')
-                    let newGameBtn = document.createElement('button')
-                    newGameBtn.classList.add('new-game')
-                    newGameBtn.setAttribute('onclick', 'btn.newGame()')
-                    newGameBtn.textContent = 'New Game'
-
-                    let againBtn = document.createElement('button')
-                    againBtn.classList.add('again')
-                    againBtn.setAttribute('onclick', 'btn.again(this, event)')
-                    againBtn.textContent = 'Again'
-
-                    childD.appendChild(newGameBtn)
-                    childD.appendChild(againBtn)
-
-                    d.appendChild(p)
-                    d.appendChild(childD)
-
-                    container.appendChild(d)
+                    if(document.querySelector('.gameover-pop') === null) {
+                        
+                        let d = document.createElement('div')
+                        d.classList.add('gameover-pop')
+    
+                        let p = document.createElement('p')
+                        p.textContent = 'TIE!'
+                        
+                        let childD = document.createElement('div')
+                        let newGameBtn = document.createElement('button')
+                        newGameBtn.classList.add('new-game')
+                        newGameBtn.setAttribute('onclick', 'btn.newGame()')
+                        newGameBtn.textContent = 'New Game'
+    
+                        let againBtn = document.createElement('button')
+                        againBtn.classList.add('again')
+                        againBtn.setAttribute('onclick', 'btn.again(this, event)')
+                        againBtn.textContent = 'Again'
+    
+                        childD.appendChild(newGameBtn)
+                        childD.appendChild(againBtn)
+    
+                        d.appendChild(p)
+                        d.appendChild(childD)
+    
+                        container.appendChild(d)
+                    }
             }
         })
         return square
